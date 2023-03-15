@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!--Допустим это подгрузка базы данных с сервера, в ней может подгружаться неограниченное число картинок-->
+@{
+    List<string> links = new List<string>() { "/Photos/1.png", "/Photos/2.png", "/Photos/3.png", "/Photos/4.png", "/Photos/5.png", "/Photos/6.png"};   
+}
+<head>
+    <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TestWork1.styles.css" asp-append-version="true" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/Index.js"></script>
+</head>
+<body>
+    
+    <div class="window_img" >
+        <button onclick="windowImgLeft()">here</button>
+        <img src="~/Photos/1.png" id=9/>
+        <button onclick="windowImgRight()">here</button>
+    </div>
+    <div class="gallery_img">
+        <!--Загружаем 5 картинок из основного меню--> 
+        @for (int linksCount = 0; linksCount <6; linksCount++)
+        {
+            <div class="down_img">
+                <img src="@links[linksCount]" id=@linksCount onclick="downImgClick()"/>
+            </div>
+        }
+    </div>
+    
+</body>
