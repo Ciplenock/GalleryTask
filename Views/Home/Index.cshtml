@@ -8,11 +8,9 @@
 <head>
     <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TestWork1.styles.css" asp-append-version="true" />
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/Index.js"></script>
-</head>
-<body>
     
+</head>
+<body>    
     <div class="window_img"  >
         <button onclick="windowImgLeft()">hHHHHH</button>
         <img src="~/Photos/1.png" id=9/>
@@ -22,10 +20,11 @@
         <!--Загружаем 5 картинок из основного меню--> 
         @for (int linksCount = 0; linksCount <6; linksCount++)
         {
-            <div class="down_img">
-                <img src="@links[linksCount]" id=@linksCount name="@linksCount" onclick="downImgClick()" class="activeDownImg" />
+            <div class="down_img" >
+                <img src="@links[linksCount]" id="@linksCount" style="background-image:@links[linksCount]" />
             </div>
         }
     </div>
-    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/Index.js"></script>
 </body>
