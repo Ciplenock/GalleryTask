@@ -8,7 +8,11 @@ function windowImgLeft() {
     imgId = imgId - 1;
     if (imgId <= -1) imgId = 5;
     document.getElementById(9).src = document.getElementById(imgId).src;
+    console.log(imgId)
 }
+
 function downImgClick() {
-    document.addEventListener('click', e => document.getElementById(9).src = e.target.src)
+    alert(EventTarget.name);
 }
+const activeImg = document.querySelectorAll('.activeDownImg');
+
